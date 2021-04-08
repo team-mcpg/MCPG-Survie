@@ -1,6 +1,7 @@
 package fr.milekat.MCPG_Survival;
 
 import fr.milekat.MCPG_Survival.core.CoreManager;
+import fr.milekat.MCPG_Survival.rules.RulesManager;
 import fr.milekat.MCPG_Survival.survival.SurvivalManager;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,5 +18,6 @@ public class MainSurvival extends JavaPlugin {
     public void onEnable() {
         new CoreManager(this);
         new SurvivalManager(this);
+        new RulesManager(this);
     }
 }
