@@ -32,5 +32,6 @@ dependencies {
     compileOnly group: 'org.spigotmc', name: 'spigot-api', version: '1.16.5-R0.1-SNAPSHOT'
     compileOnly group: 'com.github.team-mcpg', name: 'MCPG-Core', version: 'main-SNAPSHOT'
     //  Plugin dependencies
+    implementation group: 'fr.mrmicky', name: 'FastInv', version: '3.0.2'
     compileOnly group: 'com.comphenix.protocol', name: 'ProtocolLib', version: '4.6.0'
 }

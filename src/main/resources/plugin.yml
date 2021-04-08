@@ -1,7 +1,11 @@
-name: MCPG-Survie
-main: fr.milekat.MCPG_Survie.MainSurvie
+name: MCPG-Survival
+main: fr.milekat.MCPG_Survival.MainSurvival
 version: 1.0
 author: MileKat
 api-version: 1.16
 depend: [MCPG-Core, ProtocolLib]
-commands: []
+commands:
+  mega:
+    usage: "/mega <price>"
+    permission: "modo.core.command.mega"
+    permission-message: "§cAction impossible."
