@@ -1,0 +1,7 @@
+name: MCPG-Survie
+main: fr.milekat.MCPG_Survie.MainSurvie
+version: 1.0
+author: MileKat
+api-version: 1.16
+depend: [MCPG-Core, ProtocolLib]
+commands: []
