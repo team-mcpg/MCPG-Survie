@@ -6,6 +6,7 @@ import org.bukkit.plugin.Plugin;
 
 public class SurvivalManager {
     public SurvivalManager(Plugin plugin) {
+        plugin.getServer().getMessenger().registerOutgoingPluginChannel(plugin, "BungeeCord");
         plugin.getServer().getPluginManager().registerEvents(new ServerSwitch(plugin), plugin);
         plugin.getServer().getPluginManager().registerEvents(new Spawn(), plugin);
     }

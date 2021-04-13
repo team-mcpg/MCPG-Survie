@@ -1,13 +1,13 @@
 package fr.milekat.MCPG_Survival.survival.events;
 
 import fr.milekat.MCPG_Survival.MainSurvival;
-import org.bukkit.block.Sign;
-import org.bukkit.block.data.type.WallSign;
+import fr.milekat.MCPG_Survival.utils.McTools;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.Plugin;
 
 import java.io.ByteArrayOutputStream;
@@ -32,14 +32,12 @@ public class ServerSwitch implements Listener {
     }
 
     @EventHandler
-    public void onSignServerClick(PlayerInteractEvent event) {
-        if (!MainSurvival.SAFE_PLAYERS.contains(event.getPlayer())) return;
-        if (event.getClickedBlock()==null) return;
-        if (!event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
-        if (!(event.getClickedBlock().getBlockData() instanceof WallSign)) return;
-        Sign sign = (Sign) event.getClickedBlock().getState();
-        if (!sign.getLine(0).equalsIgnoreCase("§b[Retour à la cite]")) return;
+    public void onDoorWalk(PlayerMoveEvent event) {
+        Location max = new Location(Bukkit.getWorld("world"), 2, 76, -32);
+        Location min = new Location(Bukkit.getWorld("world"), -2, 70, -34);
+        if (!McTools.inArea(event.getPlayer().getLocation(), max, min)) return;
         try {
+            event.getPlayer().teleport(new Location(Bukkit.getWorld("world"), 0, 70.5, -38, 180, 0));
             sendPlayerToServer(event.getPlayer(), "cite");
         } catch (IOException throwable) {
             event.getPlayer().sendMessage(MainSurvival.PREFIX + "§cErreur interne, contact le staff");

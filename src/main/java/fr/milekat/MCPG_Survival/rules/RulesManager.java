@@ -1,7 +1,7 @@
 package fr.milekat.MCPG_Survival.rules;
 
-import fr.milekat.MCPG_Survival.rules.events.MobEmeraldDrop;
 import fr.milekat.MCPG_Survival.rules.events.BarteringCancel;
+import fr.milekat.MCPG_Survival.rules.events.MobEmeraldDrop;
 import fr.milekat.MCPG_Survival.rules.events.VillagersCustom;
 import org.bukkit.plugin.Plugin;
 
