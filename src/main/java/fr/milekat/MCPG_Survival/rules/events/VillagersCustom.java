@@ -3,6 +3,7 @@ package fr.milekat.MCPG_Survival.rules.events;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Villager;
+import org.bukkit.entity.WanderingTrader;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -31,6 +32,8 @@ public class VillagersCustom implements Listener {
         if (event.getRightClicked() instanceof Villager) {
             event.setCancelled(true);
             event.getPlayer().openMerchant(VILLAGER, true);
+        } else if (event.getRightClicked() instanceof WanderingTrader) {
+            event.setCancelled(true);
         }
     }
 }

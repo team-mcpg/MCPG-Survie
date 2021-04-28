@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class WaitEnd implements Listener {
-    private final Date OPEN = DateMilekat.getDate("17/04/2021 10:00:00");  //dd/MM/yyyy HH:mm:ss
+    private final Date OPEN = DateMilekat.getDate("17/04/2021 14:00:00");  //dd/MM/yyyy HH:mm:ss
 
     @EventHandler (priority = EventPriority.LOWEST)
     public void onEndEnter(PlayerPortalEvent event) {
